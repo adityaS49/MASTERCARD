@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+
+<body>
+  <div class="big">
+    <section>
+      <div class="container1">
+
+      </div>
+      <div class="container2" id="display_form">
+        <form name="card_details" action="#" class="details">
+          <h4 class="info">CARDHOLDER NAME</h4>
+          <input type="text" id="card_info" class="card info" placeholder=" e.g. Jane Appleseed" name="Name:">
+          <h4 class="info">CARDHOLDER NUMBER</h4>
+          <input type="text" id="card_no" pattern="[\d ]*" class="card info" name="Card_No"
+            placeholder="e.g. 1234 5678 9123 0000" minlength="16" maxlength="16" required>
+          <p id="cardno_error" class="error"></p>
+          <div class="credentials">
+            <div class="birth">
+              <h4 class="info"> Exp. Date (MM/YY)</h4>
+              <input type="text" id="MM" class="date info" name="Month" placeholder="M M" minlength="1" maxlength="2"
+                min="1" max="12" width="6rem" required>
+              <input type="text" id="YY" class="date info" name="Year" placeholder="Y Y Y Y" minlength="4" maxlength="4" width="6rem"
+              required>
+              <p id="Date_error" class="error"></p>
+            </div>
+            <div class="cvc">
+              <h4 class="info">CVC</h4>
+              <input type="text" id="CV" class="info" name="CVC" placeholder="e.g. 123" minlength="3" maxlength="3" width="8rem"
+              required>
+              <p id="CVC_error" class="error"></p>
+            </div>
+          </div>
+          <button type="button" class="confirm info" id="submit_btn" onclick ="open_popup()">Confirm</button>
+        </form>
+      </div>
+    </section>
+
+
+    <div class="cards">
+      <div class="front">
+        <img src="./images/bg-card-front.png" alt="">
+        <div class="full_circle"></div>
+        <div class="circle"></div>
+        <h2 class="n01">0000 0000 0000 0000</h2>
+        <h2 class="name">Jane Appleseed</h2>
+        <h2 class="cv">00/00</h2>
+      </div>
+      <div class="top">
+        <img src="./images/bg-card-back.png" alt="">
+      </div>
+      <div class="back">
+        <img src="./images/bg-card-back.png" alt="">
+        <h2 class="back01">000</h2>
+      </div>
+      <div class="bottom">
+        <img src="./images/bg-card-front.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="complete" id="popup">
+    <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="40" fill="url(#a)" />
+      <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
+      <defs>
+        <linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#6348FE" />
+          <stop offset="1" stop-color="#610595" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <h1>Thank You!</h1>
+    <h3>We've added your card details</h3>
+    <button class="continue" id="popup" onclick="close_popup()">Continue</button>
+  </div>
+  <script src="./func.js"></script>
+</body>
+
+</html>
